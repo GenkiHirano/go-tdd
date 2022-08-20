@@ -1,3 +1,3 @@
-module github.com/GenkiHirano/tdd-go2.git
+module github.com/GenkiHirano/tdd-go.git
 
 go 1.18
