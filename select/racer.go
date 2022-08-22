@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func Recer(a, b string) (winner string) {
+func Racer(a, b string) (winner string) {
 	startA := time.Now()
 	http.Get(a)
 	aDuration := time.Since(startA)
@@ -14,7 +14,7 @@ func Recer(a, b string) (winner string) {
 	http.Get(b)
 	bDuration := time.Since(startB)
 
-	if aDuration > bDuration {
+	if aDuration < bDuration {
 		return a
 	}
 
