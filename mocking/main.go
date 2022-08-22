@@ -17,16 +17,6 @@ type Sleeper interface {
 }
 
 func Countdown(out io.Writer, sleeper Sleeper) {
-	// 誤ったコード (デバッグ用)
-	// for i := countdownStart; i > 0; i-- {
-	// 	sleeper.Sleep()
-	// }
-
-	// for i := countdownStart; i > 0; i-- {
-	// 	fmt.Fprintln(out, i)
-	// }
-
-	// 正しいコード
 	for i := countdownStart; i > 0; i-- {
 		sleeper.Sleep()
 		fmt.Fprintln(out, i)
@@ -45,4 +35,13 @@ func (d *DefaultSleeper) Sleep() {
 func main() {
 	sleeper := &DefaultSleeper{}
 	Countdown(os.Stdout, sleeper)
+}
+
+type ConfigurableSleeper struct {
+	duration time.Duration
+	sleep    func(time.Duration)
+}
+
+func (c *ConfigurableSleeper) Sleep() {
+
 }
