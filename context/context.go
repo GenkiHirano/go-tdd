@@ -7,6 +7,7 @@ import (
 
 type Store interface {
 	Fetch() string
+	Cansel()
 }
 
 func Server(store Store) http.HandlerFunc {
