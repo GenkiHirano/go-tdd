@@ -1,6 +1,6 @@
 package v1
 
-type Counter struct{
+type Counter struct {
 	value int
 }
 
