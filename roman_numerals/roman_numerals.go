@@ -6,6 +6,7 @@ func ConvertToArabic(roman string) (total uint16) {
 	for _, symbols := range windowedRoman(roman).Symbols() {
 		total += allRomanNumerals.ValueOf(symbols...)
 	}
+
 	return
 }
 
@@ -47,6 +48,7 @@ func (r romanNumerals) Exists(symbols ...byte) bool {
 			return true
 		}
 	}
+
 	return false
 }
 
@@ -80,6 +82,7 @@ func (w windowedRoman) Symbols() (symbols [][]byte) {
 			symbols = append(symbols, []byte{byte(symbol)})
 		}
 	}
+
 	return
 }
 

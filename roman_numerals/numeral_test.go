@@ -73,6 +73,7 @@ func TestPropertiesOfConversion(t *testing.T) {
 		t.Log("testing", arabic)
 		roman := ConvertToRoman(arabic)
 		fromRoman := ConvertToArabic(roman)
+
 		return fromRoman == arabic
 	}
 
