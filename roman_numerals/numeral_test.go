@@ -8,7 +8,7 @@ import (
 
 var (
 	cases = []struct {
-		Arabic int
+		Arabic uint16
 		Roman  string
 	}{
 		{Arabic: 1, Roman: "I"},
@@ -43,9 +43,9 @@ var (
 	}
 )
 
-func TestRomanNumerals(t *testing.T) {
+func TestConvertingToRomanNumerals(t *testing.T) {
 	for _, test := range cases {
-		t.Run(fmt.Sprintf("%d gets converted to %q", test.Arabic, test.Roman), func(t *testing.T) {
+		t.Run(fmt.Sprintf("%d gets converted to '%s", test.Arabic, test.Roman), func(t *testing.T) {
 			got := ConvertToRoman(test.Arabic)
 			if got != test.Roman {
 				t.Errorf("got %q, want %q", got, test.Roman)
