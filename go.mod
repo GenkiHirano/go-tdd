@@ -1,3 +1,3 @@
 module github.com/GenkiHirano/tdd-go.git
 
-go 1.18
+go 1.19
